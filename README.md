@@ -1,21 +1,43 @@
 <p align="center">
-  <img src="https://cdn.guthmann.estate/branding/logo/png/circle/standard.png" width="96" alt="GUTHMANN® logo" />
+  <img src="https://cdn.guthmann.estate/branding/logo/png/circle/standard.png" width="88" alt="GUTHMANN® logo" />
 </p>
 
-# GUTHMANN® Market Intelligence MCP Server
+<h1 align="center">GUTHMANN® Market Intelligence MCP Server</h1>
 
-The Berlin real estate market, machine-readable: a free remote [MCP](https://modelcontextprotocol.io) server for AI agents by [GUTHMANN®](https://guthmann.estate/en/market-intelligence/).
+<p align="center">The Berlin real estate market, machine-readable: free market data for AI agents.<br />No API key, no registration — connect and query.</p>
 
-No API key, no registration. Connect and query.
+<p align="center">
+  <a href="https://guthmann.estate/en/market-intelligence/"><img src="https://img.shields.io/badge/Website-guthmann.estate-00806C" alt="Website" /></a>
+  <a href="https://registry.modelcontextprotocol.io/v0/servers?search=guthmann"><img src="https://img.shields.io/badge/MCP_Registry-estate.guthmann%2Fmarket--intelligence-blue" alt="MCP Registry" /></a>
+  <img src="https://img.shields.io/badge/Auth-none-brightgreen" alt="No auth required" />
+</p>
+
+<p align="center">
+  <a href="https://cursor.com/en/install-mcp?name=guthmann&config=eyJ1cmwiOiJodHRwczovL21jcC5ndXRobWFubi5lc3RhdGUvbWNwIn0="><img src="https://cursor.com/deeplink/mcp-install-dark.svg" alt="Install in Cursor" height="28" /></a>
+  <a href="https://insiders.vscode.dev/redirect/mcp/install?name=guthmann&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A//mcp.guthmann.estate/mcp%22%7D"><img src="https://img.shields.io/badge/VS_Code-Install_Server-0098FF?style=flat-square&logo=visualstudiocode&logoColor=white" alt="Install in VS Code" height="28" /></a>
+</p>
+
+---
 
 ```
 https://mcp.guthmann.estate/mcp
 ```
 
-- **Transport:** Streamable HTTP
-- **Auth:** none (public)
-- **Rate limit:** 20 requests per minute per IP
-- **Registry:** [`estate.guthmann/market-intelligence`](https://registry.modelcontextprotocol.io/v0/servers?search=guthmann) in the official MCP Registry
+Streamable HTTP, stateless, rate-limited at 20 requests per minute per IP. Listed in the official [MCP Registry](https://registry.modelcontextprotocol.io) as `estate.guthmann/market-intelligence`.
+
+## What you can ask
+
+```txt
+Which neighbourhoods make up the Berlin district of Pankow?
+```
+
+```txt
+Find the LOR planning area for Kollwitzkiez and show its details.
+```
+
+```txt
+List all 12 Berlin districts with their key facts.
+```
 
 ## Connect
 
@@ -25,19 +47,34 @@ https://mcp.guthmann.estate/mcp
 claude mcp add --transport http guthmann https://mcp.guthmann.estate/mcp
 ```
 
-**Claude.ai / Claude Desktop** — add a custom connector with the URL above.
+**Claude.ai / Claude Desktop** — Settings → Connectors → *Add custom connector*, then paste the server URL above.
 
-**Cursor, VS Code and other MCP clients**
+**Cursor** — use the install button above, or add manually:
 
 ```json
 {
   "mcpServers": {
-    "guthmann-market-intelligence": {
+    "guthmann": {
       "url": "https://mcp.guthmann.estate/mcp"
     }
   }
 }
 ```
+
+**VS Code** — use the install button above, or add to your MCP configuration:
+
+```json
+{
+  "servers": {
+    "guthmann": {
+      "type": "http",
+      "url": "https://mcp.guthmann.estate/mcp"
+    }
+  }
+}
+```
+
+Any other MCP client with Streamable HTTP support works the same way — point it at the server URL, no credentials needed.
 
 ## Tools
 
