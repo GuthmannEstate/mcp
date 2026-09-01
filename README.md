@@ -78,19 +78,33 @@ Any other MCP client with Streamable HTTP support works the same way — point i
 
 ## Tools
 
-The current scope is the Berlin area hierarchy — the geographic backbone every market query builds on: the 12 districts (Bezirke), their neighbourhoods (Ortsteile) and the LOR planning areas (Planungsräume).
+The full public Market Intelligence scope of [guthmann.estate](https://guthmann.estate/en/market-intelligence/), at the same granularity as the website — 34 tools across five groups.
+
+**Berlin market data** — granular transaction and offer aggregates, from city level down to districts, neighbourhoods and (for flats) LOR planning areas:
 
 | Tool | What it returns |
 |---|---|
-| `berlin_bezirke` | All 12 districts |
-| `berlin_bezirk_details` | One district in detail |
-| `berlin_ortsteile` | Neighbourhoods, filterable by district |
-| `berlin_ortsteil_details` | One neighbourhood in detail |
-| `berlin_planungsraeume` | LOR planning areas, filterable |
-| `berlin_planungsraum_suche` | Search planning areas by name |
-| `berlin_planungsraum_details` | One planning area in detail |
+| `immo_berlin_wohnungen` | Flats: transaction prices, offer prices, offer rents, counts, deltas |
+| `immo_berlin_mehrfamilienhaeuser` | Apartment buildings: prices, multiples, transaction volumes |
+| `immo_de_wohnimmobilien` | Germany-wide residential price and transaction indices |
+| `immo_de_mehrfamilienhaeuser` | Germany-wide apartment-building price index |
 
-The server is being extended step by step towards the full [Market Intelligence](https://guthmann.estate/en/market-intelligence/) scope of the website: prices, rents, market trends and neighbourhood analytics for Berlin — plus property search.
+**Areas and zoning** — the Berlin area hierarchy and conservation areas:
+
+| Tool | What it returns |
+|---|---|
+| `berlin_bezirke` / `berlin_bezirk_details` | The 12 districts |
+| `berlin_ortsteile` / `berlin_ortsteil_details` | Neighbourhoods |
+| `berlin_planungsraeume` / `berlin_planungsraum_suche` / `berlin_planungsraum_details` | LOR planning areas |
+| `berlin_erhaltungsgebiete` / `berlin_erhaltungsgebiet_details` | Social conservation areas (Milieuschutz) |
+
+**Socio-demographics** (11 tools, `sozio_berlin_*`) — population, age structure, origin, migration, census data on buildings, households, dwellings and rents, construction activity.
+
+**Macro indicators** (9 tools, `makro_*`) — ECB rates, Bund yields, mortgage lending, construction prices, inflation, GDP, labour market.
+
+**Metadata** — `feld_metadaten` explains every field: labels, units, descriptions and data sources.
+
+Property search is next on the roadmap.
 
 ## About
 
