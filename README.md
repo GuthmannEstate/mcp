@@ -109,7 +109,7 @@ The full public Market Intelligence scope of [guthmann.estate](https://guthmann.
 | `berlin_neighborhoods` / `berlin_neighborhood_search` / `berlin_neighborhood_details` | LOR neighborhoods (Planungsräume) |
 | `berlin_conservation_areas` / `berlin_conservation_area_details` | Social conservation areas (Milieuschutz) |
 
-**Socio-demographics** (12 tools, `socio_berlin_*`) — population, age groups, origin, migration, census data on buildings, households, dwellings and rents, construction activity.
+**Socio-demographics** (11 tools, `socio_berlin_*`) — population, age groups, origin, migration, census data on buildings, households, dwellings and rents, construction activity.
 
 **Macro indicators** (9 tools, `macro_*`) — ECB policy rates, Bund yields, mortgage lending, construction prices, inflation (HICP), GDP, labor market.
 
