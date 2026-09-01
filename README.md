@@ -23,7 +23,7 @@
 https://mcp.guthmann.estate/mcp
 ```
 
-Streamable HTTP, stateless, rate-limited at 20 requests per minute per IP. Listed in the official [MCP Registry](https://registry.modelcontextprotocol.io) as `estate.guthmann/mcp`.
+Streamable HTTP, stateless, rate-limited at 60 requests per minute per IP. Listed in the official [MCP Registry](https://registry.modelcontextprotocol.io) as `estate.guthmann/mcp`.
 
 ## What you can ask
 
@@ -36,7 +36,11 @@ Find the LOR planning area for Kollwitzkiez and show its details.
 ```
 
 ```txt
-List all 12 Berlin districts with their key facts.
+Show me apartments for sale in Prenzlauer Berg under 500k EUR.
+```
+
+```txt
+List all 12 Berlin boroughs with their key facts.
 ```
 
 ## Connect
@@ -78,33 +82,40 @@ Any other MCP client with Streamable HTTP support works the same way — point i
 
 ## Tools
 
-The full public Market Intelligence scope of [guthmann.estate](https://guthmann.estate/en/market-intelligence/), at the same granularity as the website — 34 tools across five groups.
+The full public Market Intelligence scope of [guthmann.estate](https://guthmann.estate/en/market-intelligence/) plus the GUTHMANN listings — 36 tools across six groups, at the same granularity as the website. Berlin's spatial hierarchy: 12 boroughs (Bezirke), 96 districts (Ortsteile), 542 neighborhoods (LOR Planungsräume).
 
-**Berlin market data** — granular transaction and offer aggregates, from city level down to districts, neighbourhoods and (for flats) LOR planning areas:
-
-| Tool | What it returns |
-|---|---|
-| `immo_berlin_wohnungen` | Flats: transaction prices, offer prices, offer rents, counts, deltas |
-| `immo_berlin_mehrfamilienhaeuser` | Apartment buildings: prices, multiples, transaction volumes |
-| `immo_de_wohnimmobilien` | Germany-wide residential price and transaction indices |
-| `immo_de_mehrfamilienhaeuser` | Germany-wide apartment-building price index |
-
-**Areas and zoning** — the Berlin area hierarchy and conservation areas:
+**Property search** — the broker's active inventory, every result with its exposé URL:
 
 | Tool | What it returns |
 |---|---|
-| `berlin_bezirke` / `berlin_bezirk_details` | The 12 districts |
-| `berlin_ortsteile` / `berlin_ortsteil_details` | Neighbourhoods |
-| `berlin_planungsraeume` / `berlin_planungsraum_suche` / `berlin_planungsraum_details` | LOR planning areas |
-| `berlin_erhaltungsgebiete` / `berlin_erhaltungsgebiet_details` | Social conservation areas (Milieuschutz) |
+| `listings` | Active listings, filterable by segment, borough/district, price, rooms, area |
+| `listing_details` | One listing in detail: prices, costs, energy certificate, texts, images, contact |
 
-**Socio-demographics** (11 tools, `sozio_berlin_*`) — population, age structure, origin, migration, census data on buildings, households, dwellings and rents, construction activity.
+**Berlin market data** — granular transaction and offer aggregates:
 
-**Macro indicators** (9 tools, `makro_*`) — ECB rates, Bund yields, mortgage lending, construction prices, inflation, GDP, labour market.
+| Tool | What it returns |
+|---|---|
+| `market_berlin_apartments` | Flats: transaction prices, offer prices, offer rents, counts, deltas — down to neighborhood level |
+| `market_berlin_apartment_buildings` | Apartment buildings: prices, multiples, transaction volumes |
+| `market_germany_residential` | Germany-wide residential price and transaction indices |
+| `market_germany_apartment_buildings` | Germany-wide apartment-building price index |
 
-**Metadata** — `feld_metadaten` explains every field: labels, units, descriptions and data sources.
+**Areas and zoning:**
 
-Property search is next on the roadmap.
+| Tool | What it returns |
+|---|---|
+| `berlin_boroughs` / `berlin_borough_details` | The 12 boroughs (Bezirke) |
+| `berlin_districts` / `berlin_district_details` | The 96 districts (Ortsteile) |
+| `berlin_neighborhoods` / `berlin_neighborhood_search` / `berlin_neighborhood_details` | LOR neighborhoods (Planungsräume) |
+| `berlin_conservation_areas` / `berlin_conservation_area_details` | Social conservation areas (Milieuschutz) |
+
+**Socio-demographics** (12 tools, `socio_berlin_*`) — population, age groups, origin, migration, census data on buildings, households, dwellings and rents, construction activity.
+
+**Macro indicators** (9 tools, `macro_*`) — ECB policy rates, Bund yields, mortgage lending, construction prices, inflation (HICP), GDP, labor market.
+
+**Metadata** — `field_metadata` explains every response field: labels, units, descriptions and data sources, in German and English.
+
+Responses are JSON with German field names (mirroring the underlying data); `field_metadata` translates them. Prose fields (listing texts, exposé URLs) follow the `locale` parameter — default `en`.
 
 ## About
 
