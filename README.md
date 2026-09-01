@@ -2,13 +2,13 @@
   <img src="https://cdn.guthmann.estate/branding/logo/png/circle/standard.png" width="88" alt="GUTHMANN® logo" />
 </p>
 
-<h1 align="center">GUTHMANN® Market Intelligence MCP Server</h1>
+<h1 align="center">GUTHMANN® Berlin Real Estate MCP Server</h1>
 
-<p align="center">The Berlin real estate market, machine-readable: free market data for AI agents.<br />No API key, no registration — connect and query.</p>
+<p align="center">Berlin real estate for AI agents: granular market data and property search.<br />Free, no API key, no registration — connect and query.</p>
 
 <p align="center">
   <a href="https://guthmann.estate/en/market-intelligence/"><img src="https://img.shields.io/badge/Website-guthmann.estate-00806C" alt="Website" /></a>
-  <a href="https://registry.modelcontextprotocol.io/v0/servers?search=guthmann"><img src="https://img.shields.io/badge/MCP_Registry-estate.guthmann%2Fmarket--intelligence-blue" alt="MCP Registry" /></a>
+  <a href="https://registry.modelcontextprotocol.io/v0/servers?search=guthmann"><img src="https://img.shields.io/badge/MCP_Registry-estate.guthmann%2Fmcp-blue" alt="MCP Registry" /></a>
   <img src="https://img.shields.io/badge/Auth-none-brightgreen" alt="No auth required" />
 </p>
 
@@ -23,7 +23,7 @@
 https://mcp.guthmann.estate/mcp
 ```
 
-Streamable HTTP, stateless, rate-limited at 20 requests per minute per IP. Listed in the official [MCP Registry](https://registry.modelcontextprotocol.io) as `estate.guthmann/market-intelligence`.
+Streamable HTTP, stateless, rate-limited at 20 requests per minute per IP. Listed in the official [MCP Registry](https://registry.modelcontextprotocol.io) as `estate.guthmann/mcp`.
 
 ## What you can ask
 
@@ -90,7 +90,7 @@ The current scope is the Berlin area hierarchy — the geographic backbone every
 | `berlin_planungsraum_suche` | Search planning areas by name |
 | `berlin_planungsraum_details` | One planning area in detail |
 
-The server is being extended step by step towards the full [Market Intelligence](https://guthmann.estate/en/market-intelligence/) scope of the website: prices, rents, market trends and neighbourhood analytics for Berlin.
+The server is being extended step by step towards the full [Market Intelligence](https://guthmann.estate/en/market-intelligence/) scope of the website: prices, rents, market trends and neighbourhood analytics for Berlin — plus property search.
 
 ## About
 
