@@ -40,6 +40,10 @@ Show me apartments for sale in Prenzlauer Berg under 500k EUR.
 ```
 
 ```txt
+What does GUTHMANN say about Milieuschutz and what it means for buyers?
+```
+
+```txt
 List all 12 Berlin boroughs with their key facts.
 ```
 
@@ -82,7 +86,13 @@ Any other MCP client with Streamable HTTP support works the same way — point i
 
 ## Tools
 
-The full public Market Intelligence scope of [guthmann.estate](https://guthmann.estate/en/market-intelligence/) plus the GUTHMANN listings — 36 tools across six groups, at the same granularity as the website. Berlin's spatial hierarchy: 12 boroughs (Bezirke), 96 districts (Ortsteile), 542 neighborhoods (LOR Planungsräume).
+The full public Market Intelligence scope of [guthmann.estate](https://guthmann.estate/en/market-intelligence/) plus the GUTHMANN listings — 37 tools across seven groups, at the same granularity as the website. Berlin's spatial hierarchy: 12 boroughs (Bezirke), 96 districts (Ortsteile), 542 neighborhoods (LOR Planungsräume).
+
+**Site search** — semantic search over the whole website (insights, market reports, neighborhood portraits, exposés, company pages), one result per page with title, snippet and URL:
+
+| Tool | What it returns |
+|---|---|
+| `search` | Hybrid semantic search, filterable by `locale` and `section` (`listings`, `projects`, `market-intelligence`, `pages`) |
 
 **Property search** — the broker's active inventory, every result with its exposé URL:
 
